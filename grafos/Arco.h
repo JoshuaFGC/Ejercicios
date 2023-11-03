@@ -20,10 +20,10 @@ public:
         this->peso = pPeso;
     }
 
-    /*Arco(void *pOrigen, void *pDestino)
+    Arco(void *pOrigen, void *pDestino)
     {
         this(pOrigen, pDestino, 0);
-    }*/
+    }
 
     void *getOrigen()
     {

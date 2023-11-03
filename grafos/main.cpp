@@ -13,14 +13,15 @@ int main(){
     vector<ProfileLinkedin> perfiles;
     vector<string> nombres = {"Esteban", "Lupe", "Fabian", "Alejandro", "Tomas", "Steven", "Freddy", "Pedro", 
     "Marco", "Lucas", "Guillermo", "Kenneth", "Matias", "Joshua", "Alonso", "Juan", "Ana"};
-    int i = 0;
-    for (auto &nombre : nombres){
+    int i = 1;
+    for (string nombre : nombres){
         ProfileLinkedin p;
         string name = nombre;
         p.setId(i);
         p.setName(name);
         perfiles.push_back(p);
-        linkedin.addNode(&perfiles[i - 1]);
+        linkedin.addNode(&perfiles[i]);
+        i++;
     }
 
     
@@ -38,9 +39,10 @@ int main(){
     linkedin.addArc(13, 12, 6);
     linkedin.addArc(12, 1, 2);
     linkedin.addArc(14, 8, 1);
-
     
-
+    
+    linkedin.printCounters();
+    std::cout << "======================\n";
     vector<vector<INodo*>> componentesConexas = linkedin.findConnectedComponents();
     for (int i = 0; i < componentesConexas.size(); i++) {
         std::cout << "Componente Conexa " << i + 1 << ":\n";

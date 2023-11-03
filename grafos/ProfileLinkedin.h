@@ -8,11 +8,12 @@ using namespace std;
 
 class ProfileLinkedin : public INodo{
 private:
-    int id = 0;
+    static int nextID;
+    int id;
     string name;
 public:
     ProfileLinkedin(){
-        this->id = id + 1;
+        this->id = nextID++;
     }
 
     void setName(string pName){
@@ -28,7 +29,7 @@ public:
     }
 };
 
-
+int ProfileLinkedin::nextID = 1;
 
 
 #endif
